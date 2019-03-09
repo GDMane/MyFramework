@@ -10,9 +10,8 @@ def myReportStart():
 
         loader = TestLoader()
 
-        suite = TestSuite((
-            loader.loadTestsFromTestCase(MyTestCase1)
-        ))
+        suite = TestSuite((loader.loadTestsFromTestCase(MyTestCase1)))
+
         runner = HtmlTestRunner.HTMLTestRunner(output='example_dir', report_title='MyTests')
         runner.run(suite)  # unitest.main()
 
