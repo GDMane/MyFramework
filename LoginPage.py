@@ -1,6 +1,7 @@
 from MyUtilities import MyUtilitiesClass
+from MyParent import MyParentClass
 
-class LoginPageFlows():
+class LoginPageFlows(MyParentClass):
 
     driverInst = None
 
@@ -9,13 +10,20 @@ class LoginPageFlows():
 
 
     def LoginInToAccount(self,Uname,Password):
-        LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="txtUsername"]').send_keys(Uname)
-        LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="txtPassword"]').send_keys(Password)
-        LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="btnLogin"]').click()
+
+        NameLoc = LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="txtUsername"]')
+        self.MySendKeys(MyElement = NameLoc,MyValue = Uname)
+
+        PassLoc = LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="txtPassword"]')
+        self.MySendKeys(MyElement=PassLoc, MyValue=Password)
+
+        Button = LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="btnLogin"]')
+        self.MyClick(Button)
 
     def GetErrorText(self):
         try:
             return LoginPageFlows.driverInst.find_element_by_id('spanMessage').text
         except:
             None
+
 

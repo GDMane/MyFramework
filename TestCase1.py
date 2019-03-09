@@ -29,6 +29,5 @@ class MyTestCase1(unittest.TestCase):
         LoginPageObj.LoginInToAccount('Admin','admin1234')
         MyMsg = LoginPageObj.GetErrorText()
         self.assertEquals('Invalid credentials',MyMsg)
-        print('Ganesh Server Side Changed')
 
        
