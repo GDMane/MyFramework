@@ -11,19 +11,30 @@ class LoginPageFlows(MyParentClass):
 
     def LoginInToAccount(self,Uname,Password):
 
-        NameLoc = LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="txtUsername"]')
-        self.MySendKeys(MyElement = NameLoc,MyValue = Uname)
+        try:
+            NameLoc = LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="txtUsername"]')
+            self.MySendKeys(MyElement = NameLoc,MyValue = Uname)
 
-        PassLoc = LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="txtPassword"]')
-        self.MySendKeys(MyElement=PassLoc, MyValue=Password)
+            PassLoc = LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="txtPassword"]')
+            self.MySendKeys(MyElement=PassLoc, MyValue=Password)
 
-        Button = LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="btnLogin"]')
-        self.MyClick(Button)
+            LoginLoc = LoginPageFlows.driverInst.find_element_by_xpath('//*[@id="btnLogin"]')
+            self.MyClick(LoginLoc)
+
+        except:
+            #MyUtilitiesClass.driver.save_screenshot('E:/Ganesh/FailedScreens/LoginInToAccount.png')
+            self.MyGetScreenShot("LoginInToAccount")
+            return print('Exception : Web element related to method "LoginInToAccount" not found')
+
 
     def GetErrorText(self):
         try:
-            return LoginPageFlows.driverInst.find_element_by_id('spanMessage').text
+            ErrprLoc = LoginPageFlows.driverInst.find_element_by_id('spanMessage')
+            return self.MyGetText(ErrprLoc)
         except:
-            None
+            self.MyGetScreenShot("GetErrorText")
+            print('Exception : Web element related to method "GetErrorText" not found')
+            return None
+
 
 

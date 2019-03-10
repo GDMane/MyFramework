@@ -14,6 +14,9 @@ class MyTestCase3(unittest.TestCase):
         AddEmpPageFlowsObj = AddEmpPageFlows()
         AddEmpPageFlowsObj.AddNewEmp_Basic('Ganesh', 'Test', 'Mane', '9301')
 
+        MainDashboardObj.GotoEmpList()
+
+
 
 if __name__ == '__main__':
 

@@ -7,7 +7,7 @@ class MyTestCase1(unittest.TestCase):
 
     def test_Login_Valid(self):
         LoginPageObj = LoginPageFlows()
-        #LoginPageObj.LoginInToAccount('Admin','admin123')
+        LoginPageObj.LoginInToAccount('Admin','admin123')
 
     @unittest.skip('GM Condition test')
     def test_Login_UserNameTest(self):
@@ -31,3 +31,5 @@ class MyTestCase1(unittest.TestCase):
         self.assertEquals('Invalid credentials',MyMsg)
 
        
+if __name__ == '__main__':
+    unittest.main()
