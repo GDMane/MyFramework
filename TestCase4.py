@@ -15,7 +15,9 @@ class MyTestCase4(unittest.TestCase):
         MainDashboardObj.GotoEmpList()
 
         EmpListPageObj = EmpListFlows()
-        EmpListPageObj.SearchEmp('Ganesh','00309301')
+        EmpListPageObj.SearchEmp('Ganesh')
+
+        EmpListPageObj.DeleteEmp()
 
 if __name__ == '__main__':
 

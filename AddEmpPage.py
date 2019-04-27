@@ -3,7 +3,7 @@ from MyParent import MyParentClass
 
 class AddEmpPageFlows(MyParentClass):
 
-    def AddNewEmp_Basic(self,Fname,Mname,Lname,Id):
+    def AddNewEmp_Basic(self,Fname,Mname,Lname):
         try:
             FnameLoc = MyUtilitiesClass.driver.find_element_by_id('firstName')
             self.MySendKeys(FnameLoc,Fname)
@@ -14,8 +14,8 @@ class AddEmpPageFlows(MyParentClass):
             LnameLoc = MyUtilitiesClass.driver.find_element_by_id('lastName')
             self.MySendKeys(LnameLoc,Lname)
 
-            EidLoc = MyUtilitiesClass.driver.find_element_by_name('employeeId')
-            self.MySendKeys(EidLoc,Id)
+            #EidLoc = MyUtilitiesClass.driver.find_element_by_name('employeeId')
+            #self.MySendKeys(EidLoc,Id)
 
             SaveLoc = MyUtilitiesClass.driver.find_element_by_id('btnSave')
             self.MyClick(SaveLoc)

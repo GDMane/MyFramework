@@ -10,7 +10,8 @@ class DashboardPageFlows(MyParentClass):
         try:
             AdminLoc = MyUtilitiesClass.driver.find_element_by_id('branding').find_element_by_id('welcome')
             self.MyClick(AdminLoc)
-            LogoutLoc = MyUtilitiesClass.driver.find_element_by_id('branding').find_element_by_id('welcome-menu').find_element_by_tag_name('ul').find_element_by_link_text('Logout')
+            #LogoutLoc = MyUtilitiesClass.driver.find_element_by_id('branding').find_element_by_id('welcome-menu').find_element_by_tag_name('ul').find_element_by_link_text('Logout')
+            LogoutLoc = MyUtilitiesClass.driver.find_element_by_xpath('// *[ @ id = "welcome-menu"] / ul / li[2] / a')
             self.MyClick(LogoutLoc)
         except:
             self.MyGetScreenShot("LogoutFromAccount")

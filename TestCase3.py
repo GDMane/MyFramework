@@ -12,11 +12,10 @@ class MyTestCase3(unittest.TestCase):
         MainDashboardObj = DashboardPageFlows()
         MainDashboardObj.GotoAddEmp()
         AddEmpPageFlowsObj = AddEmpPageFlows()
-        AddEmpPageFlowsObj.AddNewEmp_Basic('Ganesh', 'Test', 'Mane', '9302')
+        AddEmpPageFlowsObj.AddNewEmp_Basic('Ganesh', 'Test', 'Mane')
 
-        MainDashboardObj.GotoEmpList()
-
-
+        MainDashboardObj = DashboardPageFlows()
+        MainDashboardObj.LogoutFromAccount()
 
 if __name__ == '__main__':
 
