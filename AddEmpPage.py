@@ -6,16 +6,16 @@ class AddEmpPageFlows(MyParentClass):
     def AddNewEmp_Basic(self,Fname,Mname,Lname,Id):
         try:
             FnameLoc = MyUtilitiesClass.driver.find_element_by_id('firstName')
-            self.MySendKeys(FnameLoc)
+            self.MySendKeys(FnameLoc,Fname)
 
             MnammeLoc = MyUtilitiesClass.driver.find_element_by_id('middleName')
-            self.MySendKeys(MnammeLoc)
+            self.MySendKeys(MnammeLoc,Mname)
 
             LnameLoc = MyUtilitiesClass.driver.find_element_by_id('lastName')
-            self.MySendKeys(LnameLoc)
+            self.MySendKeys(LnameLoc,Lname)
 
             EidLoc = MyUtilitiesClass.driver.find_element_by_name('employeeId')
-            self.MySendKeys(EidLoc)
+            self.MySendKeys(EidLoc,Id)
 
             SaveLoc = MyUtilitiesClass.driver.find_element_by_id('btnSave')
             self.MyClick(SaveLoc)

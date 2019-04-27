@@ -22,7 +22,7 @@ class DashboardPageFlows(MyParentClass):
             SubMenu_AddEmpForm = MyUtilitiesClass.driver.find_element_by_xpath('// *[ @ id = "menu_pim_addEmployee"]')
             AddEmpLocList = [Menu_PIM,SubMenu_AddEmpForm]
             self.MyMouseOver2(AddEmpLocList)
-            self.MyScroll()
+            self.MyScroll('100')
         except:
             self.MyGetScreenShot("GotoAddEmp")
             return print('Exception : Web element related to method "GotoAddEmp" not found')
