@@ -6,7 +6,7 @@ from AddEmpPage import AddEmpPageFlows
 
 class MyTestCase3(unittest.TestCase):
 
-    def test_LoginLogout(self):
+    def test_CreateEmp(self):
         LoginPageObj = LoginPageFlows()
         LoginPageObj.LoginInToAccount('Admin','admin123')
         MainDashboardObj = DashboardPageFlows()
