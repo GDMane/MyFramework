@@ -8,7 +8,7 @@ class MyUtilitiesClass:
     def Mydriver(browser = "Chrome"):
 
         if browser == "Chrome":
-            MyUtilitiesClass.driver = webdriver.Chrome('E:\\Ganesh\\Drivers\\chromedriver.exe')
+            MyUtilitiesClass.driver = webdriver.Chrome("E://GMtes//MyFramework//Driver//chromedriver.exe")
         else:
             pass
 
